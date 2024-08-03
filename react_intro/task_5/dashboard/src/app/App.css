@@ -1,47 +1,44 @@
 :root {
-  --color-red: rgb(224, 0, 60);
+  --color: #c7254e;
 }
 
 body {
-  margin: 0px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
-.app {
-  font-size: 24px;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
-.App-header {
+header {
+  border-bottom: 4px solid var(--color);
   display: flex;
   align-items: center;
-
-  color: var(--color-red);
-
-  border-bottom: 4px var(--color-red) solid;
+  font-size: 30px;
+  margin: 0 15px;
 }
 
-.logo {
-  height: 240px;
+h1 {
+  color: var(--color);
 }
 
 .App-body {
-  margin-top: 75px;
-  margin-left: 48px;
+  margin-left: 75px;
 }
 
-.login {
-  display: flex;
-  gap: 15px;
-}
-
-.App-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-
-  font-size: 20px;
+footer {
   text-align: center;
-  font-style: italic;
+  border-top: 4px solid var(--color);
+  margin: 0 15px;
+}
 
-  border-top: 4px var(--color-red) solid;
+footer p {
+  font-style: italic;
 }

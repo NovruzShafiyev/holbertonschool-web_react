@@ -2,21 +2,22 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 
-describe('<Notifications />', () => {
+describe('Notifications Component', () => {
   let wrapper;
-  beforeAll(() => {
+
+  beforeEach(() => {
     wrapper = shallow(<Notifications />);
   });
 
-  it('renders without crashing', () => {
+  it('Renderiza sin romperse.', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it('renders 3 <li />', () => {
-    expect(wrapper.find('li')).toHaveLength(3);
+  it('Renderiza 3 li.', () => {
+    expect(wrapper.find('li').length).toBe(3);
   });
 
-  it('renders <p>Here is the list of notifications</p>', () => {
-    expect(wrapper.contains(<p>Here is the list of notifications</p>)).toBe(true);
+  it('Renderiza con el texo "Here is the list of notifications"', () => {
+    expect(wrapper.find('p').text()).toBe('Here is the list of notifications');
   });
 });

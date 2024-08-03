@@ -1,21 +1,24 @@
-import React from "react";
-import "./Notifications.css";
-import { getLatestNotification } from "./utils";
-import closeIcon from "./close-icon.png";
+import './Notifications.css';
+import { getLatestNotification } from './utils';
+// import React from 'react';
 
-const Notifications = () => {
+function Notifications() {
   return (
     <div className="Notifications">
       <button
         style={{
-          background: "transparent",
-          border: "none",
-          position: "absolute",
-          right: 20,
+          position: 'absolute',
+          top: '10px',
+          right: '10px',
+          border: 'none',
+          background: 'transparent',
+          cursor: 'pointer',
+          fontSize: '16px',
         }}
-        aria-label="close"
+        aria-label="Close"
+        onClick={() => console.log('Close button has been clicked')}
       >
-        <img src={closeIcon} alt="close-icon" />
+        x
       </button>
       <p>Here is the list of notifications</p>
       <ul>
@@ -24,10 +27,11 @@ const Notifications = () => {
         <li
           data-priority="urgent"
           dangerouslySetInnerHTML={{ __html: getLatestNotification() }}
-        ></li>
+        >
+        </li>
       </ul>
     </div>
   );
-};
+}
 
 export default Notifications;

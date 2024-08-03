@@ -1,35 +1,23 @@
 import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 
-describe('getFullYear', () => {
-  it('returns the current year', () => {
-    const fakeYear = 2024;
-    const fakeNow = new Date();
-    fakeNow.setFullYear(fakeYear);
-
-    jest.useFakeTimers({});
-    jest.setSystemTime(fakeNow);
-
-    // ASSUMES THAT `fakeNow.setFullYear`
-    // AND `setSystemTime(fakeNow)`
-    // WORK CORRECTLY.
-
-    // console.log(fakeYear, fakeNow.getFullYear());
-
-    expect(getFullYear()).toBe(fakeYear);
-  });
+// Test for getFullYear
+test('getFullYear retorna el año actual', () => {
+  const currentYear = new Date().getFullYear();
+  expect(getFullYear()).toBe(currentYear);
 });
 
-describe('getFooterCopy', () => {
-  it("returns 'Holberton School main dashboard' when called with false", () => {
-    expect(getFooterCopy(false)).toEqual('Holberton School main dashboard');
-  });
-  it("returns 'Holberton School' when called with true", () => {
-    expect(getFooterCopy(true)).toEqual('Holberton School');
-  });
+// Test for getFooterCopy
+test('getFooterCopy retorna la cadena correcta cuando el arguemnto es true', () => {
+  expect(getFooterCopy(true)).toBe('Holberton School');
 });
 
-describe('getLatestNotification', () => {
-  it('returns "<strong>Urgent requirement</strong> - complete by EOD"', () => {
-    expect(getLatestNotification()).toEqual('<strong>Urgent requirement</strong> - complete by EOD');
-  });
+test('getFooterCopy retorna la cadena correcta cuando el arguemnto es false', () => {
+  expect(getFooterCopy(false)).toBe('Holberton School main dashboard');
+});
+
+// Test for getLatestNotification
+test('getLatestNotification retorna la cadena correcta.', () => {
+  const expectedString =
+    '<strong>Urgent requirement</strong> - complete by EOD';
+  expect(getLatestNotification()).toBe(expectedString);
 });

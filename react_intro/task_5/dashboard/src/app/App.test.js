@@ -2,25 +2,26 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
-describe('<App />', () => {
+describe('App Component', () => {
   let wrapper;
-  beforeAll(() => {
+
+  beforeEach(() => {
     wrapper = shallow(<App />);
   });
 
-  it('renders without crashing', () => {
+  it('Renderizar son romperse.', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it('renders a div with the class `App-header`', () => {
-    expect(wrapper.find('div.App-header')).toHaveLength(1);
+  it('Renderiza con un elemento con clase App-header', () => {
+    expect(wrapper.find('.App-header').length).toBe(1);
   });
 
-  it('renders a div with the class `App-body`', () => {
-    expect(wrapper.find('div.App-body')).toHaveLength(1);
+  it('Renderiza con un elemento con clase App-body', () => {
+    expect(wrapper.find('.App-body').length).toBe(1);
   });
 
-  it('renders a div with the class `App-footer`', () => {
-    expect(wrapper.find('div.App-footer')).toHaveLength(1);
+  it('Renderiza con un elemento con clase App-footer', () => {
+    expect(wrapper.find('.App-footer').length).toBe(1);
   });
 });
